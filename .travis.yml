@@ -9,7 +9,6 @@ script:
   - cd pull-comments && bash get_threads.sh; cd ..
   - ls -l
   - pwd
-  - cat file
 
 notifications:
   email:
