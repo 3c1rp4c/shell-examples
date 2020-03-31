@@ -1,14 +1,14 @@
 language: bash
 
 before_install:
-  - sudo apt-get update && sudo apt-get install -y shellcheck
+  - sudo apt-get update && sudo apt-get install -y shellcheck jq curl
 
 script:
   - ls -l
-  - bash test.sh
+#  - cd chap0x04 && bash test.sh; cd ..
+  - cd pull-comments && bash get_threads.sh; cd ..
   - ls -l
   - pwd
-  - cat file
 
 notifications:
   email:
