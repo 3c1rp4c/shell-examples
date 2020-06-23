@@ -11,8 +11,8 @@ if [[ ! -f "threads.json" ]];then
 fi
 
 # extract thread's title and id
-IFS=$'\n' titles=($(jq '.data | .[] | .title' threads.json))
-IFS=$'\n' ids=($(jq '.data | .[] | .id' threads.json))
+while IFS=$'' read -r line; do titles+=("$line");done < <(jq '.data | .[] | .title' threads.json)
+while IFS=$'' read -r line; do ids+=("$line");done < <(jq '.data | .[] | .id' threads.json)
 
 i=0
 for id in "${ids[@]}";do

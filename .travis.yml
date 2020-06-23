@@ -6,7 +6,7 @@ before_install:
 script:
   - ls -l
 #  - cd chap0x04 && bash test.sh; cd ..
-  - cd pull-comments && bash get_threads.sh; cd ..
+  - cd pull-comments && shellcheck *.sh && bash get_threads.sh && bash report.sh; cd ..
   - ls -l
   - pwd
 
